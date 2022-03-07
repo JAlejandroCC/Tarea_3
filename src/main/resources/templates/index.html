@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymleaf.org">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8">
+        
+    </head>
+    <body>
+        
+        <h2>Listado de clientes </h2>
+       
+        
+       
+        <a th:href="@{/nuevoCliente}">Nuevo cliente</a>
+        <div th:if="${clientes !=null and !clientes.empty}">
+        <table border="1" th:fragment="tabla">
+            <thead>
+                <tr >
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
+                    <th>Eliminar</th>
+                    <th>Modificar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cliente:${clientes}">
+                    <td th:text="${cliente.nombre}">  </td>
+                    <td th:text="${cliente.apellidos}"></td>
+                    <td th:text="${cliente.correo}"> </td>
+                    <td th:text="${cliente.fecha}"></td>
+                    <td><a th:href="@{/eliminarCliente/} + ${cliente.idcliente}">Eliminar</a></td>
+                    <td><a th:href="@{/modificarCliente/} + ${cliente.idcliente}">Modificar</a></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <div th:if="${clientes == null or clientes.empty}">
+            No tenemos lista de clientes que mostrar...
+        </div>
+       
+    </body>
+</html>
+
