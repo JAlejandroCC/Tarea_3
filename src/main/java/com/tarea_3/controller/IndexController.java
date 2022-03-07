@@ -16,6 +16,14 @@ public class IndexController
 {
    @Autowired
    public ClienteService clienteService;
+   
+   @GetMapping ("/listarClientes")
+   public String listar (Model model){
+       var clientes=clienteService.getClientes();
+       model.addAttribute("clientes",clientes);
+       return "Listar";
+   }
+           
    @GetMapping("/")
    public String inicio(Model model)
    {
