@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmls:th="http://wwww.thymleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Modificar vuelo</title>
+        <meta charset="UTF-8">
+        
+    </head>
+    <body>
+        <a th:href="@{/nuevoCliente}">Atras</a>
+      
+        <h1>Datos de clientes </h1>
+        <a th:href="@{/}">Regresar</a>
+        <br/>
+        <form th:action="@{/guardarCliente}"
+            method="post"
+            th:object="${cliente}">
+            <input type="hidden" name="idcliente" th:field="*{idcliente}"/>
+            <label1 for="nombre">Nombre:</label1>
+            <input type="text" name="nombre" th:field="*{nombre}"/>
+            <br/>
+            <label1 for="nombre">Apellidos:</label1>
+            <input type="text" name="apellidos" th:field="*{apellidos}"/>
+            <br/>
+            <label1 for="correo">Destino:</label1>
+            <input type="text" name="correo" th:field="*{destino}"/>
+            <br/>
+            <label1 for="telefono">Fecha de vuelo:</label1>
+            <input type="date" name="fecha" th:field="*{fecha}"/>
+            <br/>
+            <input type="submit" name="guardar" value="Guardar"/>
+        </form>
+        
+        
+    </body>
+</html>
+

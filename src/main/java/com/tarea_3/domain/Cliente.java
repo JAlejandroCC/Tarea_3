@@ -20,16 +20,16 @@ public class Cliente implements Serializable
     private Long idcliente;
     private String nombre;
     private String apellidos;
-    private String correo;
+    private String destino;
     private String fecha;
 
      public Cliente() {}
      
-    public Cliente(String nombre, String apellidos, String correo, String fecha)
+    public Cliente(String nombre, String apellidos, String destino, String fecha)
     {
         this.nombre = nombre;
         this.apellidos = apellidos;
-        this.correo = correo;
+        this.destino = destino;
         this.fecha = fecha;
     }
 
