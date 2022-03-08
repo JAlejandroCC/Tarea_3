@@ -86,3 +86,7 @@ body{
 .imagen{
     display: flex;
 }
+.letraContacto{
+    text-align: center;
+    font-size: 14px;
+}
