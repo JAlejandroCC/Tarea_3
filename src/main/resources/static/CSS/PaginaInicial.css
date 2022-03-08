@@ -69,6 +69,7 @@ body{
 
 .bienvenida{
     text-align: center;
+    color: #A64521;
 }
 
 .piedepagina{
@@ -80,4 +81,8 @@ body{
 
 .tabla{
     text-align: center;
+}
+
+.imagen{
+    display: flex;
 }
