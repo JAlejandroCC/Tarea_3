@@ -1,46 +1,31 @@
 <!DOCTYPE html>
-<html xmls:th="http://www.thymleaf.org">
+
+<html>
     <head>
-        <title>TechShop</title>
+        <title>Pagina inicio</title>
         <meta charset="UTF-8">
-        
+        <link href="CSS/PaginaInicial.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        
-        <h2>Listado de clientes </h2>
-       
-        
-       
-        <a th:href="@{/nuevoCliente}">Nuevo cliente</a>
-        <div th:if="${clientes !=null and !clientes.empty}">
-        <table border="1" th:fragment="tabla">
-            <thead>
-                <tr >
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>destino</th>
-                    <th>Fecha de vuelo</th>
-                    <th>Eliminar</th>
-                    <th>Modificar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="cliente:${clientes}">
-                    <td th:text="${cliente.nombre}">  </td>
-                    <td th:text="${cliente.apellidos}"></td>
-                    <td th:text="${cliente.destino}"> </td>
-                    <td th:text="${cliente.fecha}"></td>
-                    <td><a th:href="@{/eliminarCliente/} + ${cliente.idcliente}">Eliminar</a></td>
-                    <td><a th:href="@{/modificarCliente/} + ${cliente.idcliente}">Modificar</a></td>
-                    
-                </tr>
-            </tbody>
-        </table>
-        </div>
-        <div th:if="${clientes == null or clientes.empty}">
-            No tenemos lista de clientes que mostrar...
-        </div>
-       
-    </body>
-</html>
+        <header class="header">
 
+            <nav class="nav ">
+                <a th:href="@{/}" class="logo nav-link">Turismo</a>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" th:href="@{/}">Inicio</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" th:href="@{/listarClientes}">Listar</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" th:href="@{/nuevoCliente}">Insertar</a></li>
+                    <link href="CSS/PaginaInicial.css" rel="stylesheet" type="text/css"/>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Contactenos.html">Contactenos</a></li>
+
+
+                </ul>
+            </nav>
+        </header>
+        <br>
+        <h1 class="bienvenida">¡Bienvenido!</h1>
+        <br>
+        <figure>
+            <img src="imagenes/pexels-photo-1004584.jpeg" alt=""/>
+        </figure>
+</html>
