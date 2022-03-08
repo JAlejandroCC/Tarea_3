@@ -6,7 +6,7 @@
         <title>Insertar</title>
         <meta charset="UTF-8">
         <link href="CSS/PaginaInicial.css" rel="stylesheet" type="text/css"/>
-        
+        <link href="CSS/PaginaInicial.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header class="header">
@@ -25,10 +25,11 @@
         </header>
         
       
-        <h1>Ingrese los datos del vuelo</h1>
-        
+        <h1 class="tabla">Ingrese los datos del vuelo</h1>
+        <br>
+        <link href="CSS/PaginaInicial.css" rel="stylesheet" type="text/css"/>
         <br/>
-        <form th:action="@{/guardarCliente}"
+        <form class="tabla" th:action="@{/guardarCliente}"
             method="post"
             th:object="${cliente}">
             <input type="hidden" name="idcliente" th:field="*{idcliente}"/>
@@ -45,6 +46,7 @@
             <input type="date" name="fecha" th:field="*{fecha}"/>
             <br/><br/>
             <input type="submit" name="guardar" value="Guardar"/>
+            <input type="reset" value="Borrar">
         </form>
         
         

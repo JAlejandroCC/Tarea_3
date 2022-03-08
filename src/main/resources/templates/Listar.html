@@ -14,6 +14,7 @@
                     <li class="nav-menu-item"><a class="nav-menu-link nav-link" th:href="@{/}">Inicio</a></li>
                     <li class="nav-menu-item"><a class="nav-menu-link nav-link" th:href="@{/listarClientes}">Listar</a></li>
                     <li class="nav-menu-item"><a class="nav-menu-link nav-link" th:href="@{/nuevoCliente}">Insertar</a></li>
+                    <link href="CSS/PaginaInicial.css" rel="stylesheet" type="text/css"/>
                     <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="Contactenos.html">Contactenos</a></li>
 
 
@@ -21,8 +22,9 @@
             </nav>
         </header>
         <h1 class="bienvenida">Lista de vuelos</h1>
-        <div th:if="${clientes !=null and !clientes.empty}">
-            <table border="1" th:fragment="tabla">
+        <br><br>
+        <div style="text-align:center;" th:if="${clientes !=null and !clientes.empty}">
+            <table class="tabla" border="1" th:fragment="tabla" style="margin: 0 auto;">
                 <thead>
                     <tr >
                         <th>Nombre</th>
@@ -45,16 +47,20 @@
                     </tr>
                 </tbody>
             </table>
+            <br><br>
             <h3>¿Desea reservar otro vuelo?</h3>
-        <h5><a th:href="@{/nuevoCliente}">Si</a></h5>
-        <h5><a th:href="@{/}">No</a></h5>
+            <br>
+        <a th:href="@{/nuevoCliente}"><input type="button" value="Si"></a>
+        <a th:href="@{/}"><input type="button" value="No"></a>
+        
         </div>
-        <div th:if="${clientes == null or clientes.empty}">
+        <div style="text-align:center;" th:if="${clientes == null or clientes.empty}">
             Aun no hay vuelos reservados
+            <br><br>
             <h3>¿Desea reservar un vuelo?</h3>
-            <h5><a th:href="@{/nuevoCliente}">Si</a></h5>
-            <h5></h5>
-            <a th:href="@{/}">No</a>
+            <br>
+        <a th:href="@{/nuevoCliente}"><input type="button" value="Si"></a>
+        <a th:href="@{/}"><input type="button" value="No"></a>
         </div>
         
         
